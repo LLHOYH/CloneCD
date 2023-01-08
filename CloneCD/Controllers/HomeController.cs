@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CloneCD.Models;
+using CloneCD.DAL;
+using CloneCD.Models;
 
 namespace CloneCD.Controllers
 {
@@ -13,9 +15,15 @@ namespace CloneCD.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        UsersDAL userDAL = new UsersDAL();
+        Users users = new Users();
+        Task<Dictionary<string,object>> usersDict;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            
+            usersDict = userDAL.listUsers();
+            
         }
 
         public IActionResult Index()

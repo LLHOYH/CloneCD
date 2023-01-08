@@ -6,4 +6,16 @@
 
 
 
+  <ItemGroup>
+    <None Remove="Google.Cloud.Firestore" />
+    <None Remove="DAL\" />
+    <None Remove="BLL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Firestore" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="BLL\" />
+  </ItemGroup>
 </Project>
